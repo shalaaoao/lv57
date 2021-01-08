@@ -9,7 +9,6 @@ class TestController extends Controller
 {
     public function tests()
     {
-        $msg = Weather::instance()->tomow();
-        dingNotice('zhu')->setTextMessage('『aoao』'.$msg)->setAtMobiles(['18621311906'])->send();
+        echo 'hello world';
     }
 }
