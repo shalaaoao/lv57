@@ -25,6 +25,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
          $schedule->command('weather:warning')->dailyAt('21:00');
+
+
          $schedule->command('weather:eating')->dailyAt('10:40');
 
          $schedule->command('common:work-lunch')->dailyAt('11:40');
