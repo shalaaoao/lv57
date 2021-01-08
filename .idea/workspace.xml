@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89e12eda-d5c7-4d0a-9cc0-921492eeda3b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/laravel57.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel57.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -118,9 +126,13 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/lingan/dingtalk-notice" />
     </include_path>
   </component>
   <component name="ProjectId" id="1maHYDzUDiCWBPotCI79g5ZicJQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -128,7 +140,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Console/Commands/Common" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -138,9 +150,23 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Console/Commands/Weather" />
+      <recent name="$PROJECT_DIR$/app/Utils" />
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Console/Commands/Common" />
+      <recent name="$PROJECT_DIR$/app/Console/Commands/Weather" />
+      <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -151,10 +177,34 @@
       <option name="presentableId" value="Default" />
       <updated>1609724827407</updated>
       <workItem from="1609724828833" duration="2128000" />
+      <workItem from="1609911982750" duration="682000" />
+      <workItem from="1610074465718" duration="3547000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="3063" y="-13" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610077937334">
+      <screen x="1440" y="-747" width="3840" height="2083" />
+    </state>
+    <state x="3063" y="-13" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.877/1440.-747.3840.2083@1440.-747.3840.2083" timestamp="1610077937334" />
+    <state x="3044" y="194" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610078136270">
+      <screen x="1440" y="-747" width="3840" height="2083" />
+    </state>
+    <state x="3044" y="194" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.877/1440.-747.3840.2083@1440.-747.3840.2083" timestamp="1610078136270" />
+    <state x="3129" y="363" key="NewPhpFileDialog" timestamp="1610076933152">
+      <screen x="1440" y="-747" width="3840" height="2083" />
+    </state>
+    <state x="3129" y="363" key="NewPhpFileDialog/0.23.1440.877/1440.-747.3840.2083@1440.-747.3840.2083" timestamp="1610076933152" />
+    <state x="3013" y="187" width="586" height="490" key="find.popup" timestamp="1610077875503">
+      <screen x="1440" y="-747" width="3840" height="2083" />
+    </state>
+    <state x="3013" y="187" width="586" height="490" key="find.popup/0.23.1440.877/1440.-747.3840.2083@1440.-747.3840.2083" timestamp="1610077875503" />
+    <state x="2971" y="83" width="670" height="676" key="search.everywhere.popup" timestamp="1610078238636">
+      <screen x="1440" y="-747" width="3840" height="2083" />
+    </state>
+    <state x="2971" y="83" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/1440.-747.3840.2083@1440.-747.3840.2083" timestamp="1610078238636" />
   </component>
 </project>

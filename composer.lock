@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "82c12e372736170df5735d7456174662",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1285,6 +1285,61 @@
                 "storage"
             ],
             "time": "2020-07-26T07:20:36+00:00"
+        },
+        {
+            "name": "lingan/dingtalk-notice",
+            "version": "0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/linganmin/dingtalk-notice.git",
+                "reference": "80342062385e7394dce08873df727cb4478b0d69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/linganmin/dingtalk-notice/zipball/80342062385e7394dce08873df727cb4478b0d69",
+                "reference": "80342062385e7394dce08873df727cb4478b0d69",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lingan\\DingtalkNotice\\DingtalkNoticeServiceProvider"
+                    ],
+                    "aliases": {
+                        "DingNotice": "Lingan\\DingtalkNotice\\Facades\\DingtalkNotice"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lingan\\DingtalkNotice\\": "./src/"
+                },
+                "files": [
+                    "./src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "lingan",
+                    "email": "saboranmin@gmail.com"
+                }
+            ],
+            "description": "一个钉钉机器人的拓展包",
+            "time": "2018-12-18T10:58:13+00:00"
         },
         {
             "name": "monolog/monolog",
