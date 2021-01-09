@@ -39,9 +39,9 @@ class BeforeClose extends Command
      */
     public function handle()
     {
-//        if (Carbon::now()->isWeekend()) {
-//            return false;
-//        }
+        if (Carbon::now()->isWeekend()) {
+            return false;
+        }
 
         $url = 'http://web.juhe.cn:8080/finance/stock/hs?gid=sh000001&key=b70d9e96a6606a7d3b80c4243a394469';
         $res = CurlUtil::get_data_from_url($url);
