@@ -30,6 +30,7 @@ class Kernel extends ConsoleKernel
          $schedule->command('weather:eating')->dailyAt('10:40');
 
          $schedule->command('common:work-lunch')->dailyAt('11:40');
+         $schedule->command('common:training-day')->dailyAt('18:30');
     }
 
     /**

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89e12eda-d5c7-4d0a-9cc0-921492eeda3b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/laravel57.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel57.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +133,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Console/Commands/Common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -142,16 +143,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Console/Commands/Weather" />
-      <recent name="$PROJECT_DIR$/app/Utils" />
-      <recent name="$PROJECT_DIR$/app" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/Console/Commands/Common" />
       <recent name="$PROJECT_DIR$/app/Console/Commands/Weather" />
       <recent name="$PROJECT_DIR$/config" />
-      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Console/Commands/Common" />
+      <recent name="$PROJECT_DIR$/app/Console/Commands/Weather" />
+      <recent name="$PROJECT_DIR$/app/Utils" />
+      <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
   <component name="RunManager">
@@ -171,6 +173,7 @@
       <workItem from="1609724828833" duration="2128000" />
       <workItem from="1609911982750" duration="682000" />
       <workItem from="1610074465718" duration="6764000" />
+      <workItem from="1610173218421" duration="652000" />
     </task>
     <servers />
   </component>
