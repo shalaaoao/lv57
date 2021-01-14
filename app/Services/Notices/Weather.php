@@ -120,12 +120,14 @@ class Weather
         $low_tem  = $tem_arr[0] ?? 3;
         $high_tem = $tem_arr[1] ?? 29;
 
+        $msg .= "气温{$low_tem} - {$high_tem}";
+
         if ($low_tem < 3) {
-            $msg .= "最低气温:{$low_tem}°C，🐷小饱饱要注意保暖哦" . PHP_EOL;
+            $msg .= "，🐷小饱饱要注意保暖哦" . PHP_EOL;
         }
 
         if ($high_tem > 30) {
-            $msg .= "最高气温:{$high_tem}°C，🐷小饱饱要注意散热哦" . PHP_EOL;
+            $msg .= "，🐷小饱饱要注意散热哦" . PHP_EOL;
         }
 
         $wid_day   = $wid_day['day'] ?? 0;
