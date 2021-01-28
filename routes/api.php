@@ -18,3 +18,13 @@ use Illuminate\Http\Request;
 //});
 
 Route::any("/tests", "TestController@tests");
+
+Route::group(['prefix' => 'star'], function ($router) {
+
+    // 获取日志
+    $router->get('lists', 'StarController@lists');
+
+    // 新增
+    $router->post('add', 'StartController@add');
+});
+
