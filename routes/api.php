@@ -25,6 +25,9 @@ Route::group(['prefix' => 'star'], function ($router) {
     $router->get('lists', 'StarController@lists');
 
     // 新增
-    $router->post('add', 'StartController@add');
+    $router->post('add', 'StarController@add');
+
+    // 新增page
+    $router->get('add-page', 'StarController@addPage');
 });
 

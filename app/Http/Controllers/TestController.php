@@ -12,7 +12,6 @@ class TestController extends Controller
 {
     public function tests()
     {
-        $a = Star::addStarWithNotice(2, 4);
-        dd($a);
+        dd(route('star.add'));
     }
 }
