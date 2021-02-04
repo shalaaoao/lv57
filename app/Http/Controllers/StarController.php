@@ -24,6 +24,14 @@ class StarController extends Controller
     public function add(Request $request)
     {
         $star_type = (int)$request->get('star_type');
+        if ($star_type == StarLog::STAR_TYPE_DEFINE) {
+            $star_num  = (int)$request->get('star_num');
+            $star_desc = (string)$request->get('star_desc');
+        } else {
+            $star_num = StarLog::STAR_TYPE_NUM[$star_type] ?? 0;
+            $star_desc = StarLog::STAR_TYPE_TEXT[$star_type] ?? '';
+        }
+
         if (!$star_type) {
             Session::put('star_alert', '你没选啊大哥');
             return back();
@@ -34,13 +42,12 @@ class StarController extends Controller
             return back();
         }
 
-        $star_num = StarLog::STAR_TYPE_NUM[$star_type] ?? 0;
         if (!$star_num) {
             Session::put('star_alert', '0个✨，不加了');
             return back('', ['alert' => '你妹啊']);
         }
 
-        Star::addStarWithNotice($star_num, $star_type);
+        Star::addStarWithNotice($star_num, $star_type, $star_desc);
 
         return redirect('/star/lists');
     }

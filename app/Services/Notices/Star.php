@@ -6,19 +6,18 @@ use App\Http\Model\StarLog;
 
 class Star extends BaseNotice
 {
-    public static function addStarWithNotice(int $star_num, int $star_type)
+    public static function addStarWithNotice(int $star_num, int $star_type, string $star_desc)
     {
-        $add = StarLog::addData($star_num, $star_type);
+        if (!$star_desc) {
+            $star_desc = StarLog::STAR_TYPE_TEXT[$star_type] ?? '';
+        }
+
+        $add = StarLog::addData($star_num, $star_type, $star_desc);
         if (!$add->id) {
             return;
         }
 
-        $star_type_text = StarLog::STAR_TYPE_TEXT[$star_type] ?? '';
-        if (!$star_type_text) {
-            return;
-        }
-
-        $msg = '🐷饱饱触发每日奖励：'.PHP_EOL.'『' . $star_type_text . '』';
+        $msg = '🐷饱饱触发每日奖励：'.PHP_EOL.'『' . $star_desc . '』';
         if ($add->star_num == 0) {
             return;
         }

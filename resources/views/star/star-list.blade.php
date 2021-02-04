@@ -88,7 +88,7 @@
                 @foreach($data as $star)
                     <tr>
                         <td>{{$star->created_at}}</td>
-                        <td>{{\App\Http\Model\StarLog::STAR_TYPE_TEXT[$star->star_type] ?? '错误的数据'}}</td>
+                        <td>{{$star->star_desc}}</td>
                         <td>
                             @if($star->star_num > 0)
                                 @for($i=0;$i<$star->star_num;$i++)

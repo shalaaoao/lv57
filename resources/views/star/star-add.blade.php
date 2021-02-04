@@ -41,6 +41,12 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" name="star_num" placeholder="✨✨数量">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="star_desc" placeholder="手动填写理由">
+                            </div>
                             <input type="submit" class="btn" value="添加!">
                         </form>
                     </div>
