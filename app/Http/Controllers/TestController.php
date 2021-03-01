@@ -15,11 +15,6 @@ class TestController extends Controller
 {
     public function tests()
     {
-        $topic = 'my_topic';
-        $endpoint = new Endpoint('http://127.0.0.1:4161');
-        $message = new Message('hello world');
-        $result = Queue::publish($endpoint, $topic, $message);
-
-        dd($result);
+        echo phpinfo();
     }
 }
