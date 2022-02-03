@@ -44,7 +44,7 @@ class Responsibility extends Command
         $handle1->setSuccessor($handle2);
         $handle2->setSuccessor($handle3);
 
-        $requests = ['你妹毛泽东嗷嗷', 'a'];
+        $requests = ['你妹毛泽东嗷嗷', 'a', 2, [12]];
 
         foreach ($requests as $request) {
             dump($handle1->HandleRequest($request));
@@ -68,11 +68,11 @@ class ConcreteHandler1 extends Handler
 {
     public function HandleRequest($request)
     {
-//        if (is_numeric($request)) {
-//            return '请求参数是数字：' . $request;
-//        } else {
-//            return $this->successor->HandleRequest($request);
-//        }
+        if (is_numeric($request)) {
+            return '请求参数是数字：' . $request;
+        } else {
+            return $this->successor->HandleRequest($request);
+        }
 
         // 过滤敏感词
         $warnings = ['毛泽东', '领导人'];

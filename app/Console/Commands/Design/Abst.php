@@ -4,21 +4,21 @@ namespace App\Console\Commands\Design;
 
 use Illuminate\Console\Command;
 
-class Strategy extends Command
+class Abst extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'design:strategy';
+    protected $signature = 'design:abst';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '设计模式：策略模式';
+    protected $description = 'abstract语法测试';
 
     /**
      * Create a new command instance.
@@ -41,29 +41,18 @@ class Strategy extends Command
     }
 }
 
-interface StrategyInterface {
-    public function st();
+abstract class BaseAb
+{
+    abstract protected function a($param);
+    protected $aaa;
 }
 
-interface Strategy2Interface{
-    public function st2($a);
-}
-
-class StrategyA implements StrategyInterface, Strategy2Interface {
-    public function st()
+class ChildAb extends BaseAb {
+    public function a($b=1)
     {
 
     }
 
-    public function st2($b)
-    {
-
-    }
+    public $aaa=2;
 }
 
-class StrategyB implements StrategyInterface {
-    public function st()
-    {
-
-    }
-}

@@ -11,6 +11,7 @@
         "php": "^7.4",
         "ext-json": "*",
         "fideloper/proxy": "^4.0",
+        "hhxsv5/laravel-s": "~3.7.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "lingan/dingtalk-notice": "^0.1.3",

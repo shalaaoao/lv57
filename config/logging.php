@@ -89,6 +89,13 @@ return [
             'driver' => 'errorlog',
             'level' => 'debug',
         ],
+
+        'apiAccess' => [
+            'driver' => 'daily',
+            'path'   => storage_path('logs/apiAccess.log'),
+            'level'  => env('LOG_LEVEL', 'debug'),
+            'days'   => 14,
+        ],
     ],
 
 ];
