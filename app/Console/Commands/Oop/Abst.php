@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\Design;
+namespace App\Console\Commands\Oop;
 
 use Illuminate\Console\Command;
 
@@ -11,7 +11,7 @@ class Abst extends Command
      *
      * @var string
      */
-    protected $signature = 'design:abst';
+    protected $signature = 'oop:abst';
 
     /**
      * The console command description.
