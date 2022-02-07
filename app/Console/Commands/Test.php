@@ -46,6 +46,8 @@ class Test extends Command
     public function handle()
     {
         $a = CardEnum::getPackCards();
+        $res = array_chunk($a, count($a)/ 4);
+       dd($res);
         dd($a);
         die;
         $previousCards = [3,4,5,6,7];

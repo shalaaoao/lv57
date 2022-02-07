@@ -6,9 +6,6 @@ class CardEnum
 {
     const GAME_TYPE_DDZ = 1; // 斗地主
 
-//    const CARD_NO_1_TEM = 1; // 连牌中当1用
-//    const CARD_NO_2_TEM = 2; // 连牌中当2用
-
     const CARD_NO_3  = 3; // 3
     const CARD_NO_12 = 12; // K
     const CARD_NO_13 = 13; // A
@@ -71,4 +68,44 @@ class CardEnum
     // 角色
     const PLAYER_ROLE_FARMER   = 1; // 农民
     const PLAYER_ROLE_LANDLORD = 2; // 地主
+
+    // 翻倍条件
+    const BOMB_4    = 1; // >=4个炸弹
+    const BOMB_5    = 2; // >=5个炸弹
+    const SPRING    = 3; // 春天
+    const SHOW_CARD = 4; // 明牌
+
+    /**
+     * 获取默认的翻倍条件
+     * @param int $packNum
+     * @return int[]
+     */
+    public static function defaultDoubleCondition(int $packNum): array
+    {
+        $res = [
+            self::SPRING,
+            self::SHOW_CARD,
+        ];
+
+        if ($packNum == 1) {
+            $res[] = self::BOMB_4;
+        }
+
+        if ($packNum > 1) {
+            $res[] = self::BOMB_5;
+        }
+
+        return $res;
+    }
+
+    /**
+     * 地主牌的数量
+     * @param int $playerNum
+     * @param int $packNum
+     * @return int
+     */
+    public static function getLordCardsNum(int $playerNum, int $packNum): int
+    {
+        return $playerNum * $packNum;
+    }
 }

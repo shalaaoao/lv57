@@ -37,6 +37,14 @@ interface ICardConfig
     public function setPlayerRole(int $playerNo, int $role): self;
 
     /**
+     * 初始化玩家的牌
+     * @param int $playerNo
+     * @param array $cards
+     * @return $this
+     */
+    public function initPlayerCards(int $playerNo, array $cards): self;
+
+    /**
      * 选择玩法
      * @param int $gameType
      */

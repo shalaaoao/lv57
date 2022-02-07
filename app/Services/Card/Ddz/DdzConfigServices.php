@@ -18,6 +18,8 @@ class DdzConfigServices extends BaseCardServices implements ICardConfig
             throw new \Exception('目前斗地主仅支持最多4副牌打法');
         }
 
+        $this->packNum = $packNum;
+
         // 斗地主保留完整牌
         $packDetail = CardEnum::getPackCards();
 
@@ -37,10 +39,11 @@ class DdzConfigServices extends BaseCardServices implements ICardConfig
             throw new \Exception('斗地主人数限制为3-4人');
         }
 
-        for ($i=0;$i<$num;$i++){
+        for ($i = 0; $i < $num; $i++) {
             $this->players[$i] = [
-                'name' => '',
-                'role' => 0,
+                'name'  => '', // 姓名
+                'role'  => CardEnum::PLAYER_ROLE_FARMER, // 角色，默认农民
+                'cards' => [], // 剩余卡片
             ];
         }
 
@@ -61,6 +64,13 @@ class DdzConfigServices extends BaseCardServices implements ICardConfig
         return $this;
     }
 
+    public function initPlayerCards(int $playerNo, array $cards): self
+    {
+        $this->players[$playerNo]['cards'] = $cards;
+
+        return $this;
+    }
+
     public function setGameType(int $gameType): self
     {
         $this->gameType = $gameType;
@@ -75,13 +85,27 @@ class DdzConfigServices extends BaseCardServices implements ICardConfig
         return $this;
     }
 
-    public function setDoubleCondition(array $conditions): self
+    public function setDoubleCondition(array $conditions = []): self
     {
-        // TODO: Implement setDoubleCondition() method.
+        $this->doubleCondition = CardEnum::defaultDoubleCondition($this->packNum);
+
+        return $this;
     }
 
     public function setPlayRulesConfig(array $rules): self
     {
         // TODO: Implement setPlayRulesConfig() method.
+    }
+
+    /**
+     * 设置地主牌
+     * @param array $cards
+     * @return $this
+     */
+    public function setLordCards(array $cards): self
+    {
+        $this->lordCards = $cards;
+
+        return $this;
     }
 }

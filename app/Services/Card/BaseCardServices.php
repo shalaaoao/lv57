@@ -31,16 +31,34 @@ class BaseCardServices
     protected int $round = 1;
 
     /**
+     * 几副牌
+     * @var int
+     */
+    protected int $packNum = 1;
+
+    /**
      * 卡牌池子
      * @var array
      */
     protected array $cardsPool = [];
 
     /**
+     * 地主牌
+     * @var array
+     */
+    protected array $lordCards = [];
+
+    /**
      * 上一轮的出牌
      * @var array
      */
     protected array $previousCards = [];
+
+    /**
+     * 翻倍条件
+     * @var array
+     */
+    protected array $doubleCondition = [];
 
     /**
      * 设置上一轮的出牌信息
