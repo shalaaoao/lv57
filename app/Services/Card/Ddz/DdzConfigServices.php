@@ -71,6 +71,32 @@ class DdzConfigServices extends BaseCardServices implements ICardConfig
         return $this;
     }
 
+    public function addPlayerCards(int $playerNo, array $cards): self
+    {
+        $oriCards = $this->players[$playerNo]['cards'];
+        $mCards = array_merge($oriCards, $cards);
+        shuffle($mCards);
+
+        $this->players[$playerNo]['cards'] = $mCards;
+
+        return $this;
+    }
+
+    public function outPlayerCards(int $playerNo, array $cards): self
+    {
+        foreach ($this->players[$playerNo]['cards'] as $k => $cardNo) {
+            if (in_array($cardNo, $cards)) {
+                unset($this->players[$playerNo]['cards'][$k]);
+            }
+        }
+
+        foreach ($cards as $k => $cardNo) {
+            if (in_array($cardNo, $this->players[$playerNo]['cards'])) {
+                unset($cardNo[$k]);
+            }
+        }
+    }
+
     public function setGameType(int $gameType): self
     {
         $this->gameType = $gameType;

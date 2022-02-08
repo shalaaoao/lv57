@@ -16,7 +16,7 @@ class BaseCardServices
      * 基础分
      * @var int
      */
-    protected int $baseScore;
+    protected int $baseScore = 1;
 
     /**
      * 玩家信息

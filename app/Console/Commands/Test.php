@@ -45,10 +45,21 @@ class Test extends Command
      */
     public function handle()
     {
-        $a = CardEnum::getPackCards();
-        $res = array_chunk($a, count($a)/ 4);
-       dd($res);
-        dd($a);
+        $playersCards = [1,1,2,2,3,3,4,4];
+        $cards = [3,3,4,5];
+
+        foreach ($cards as $k => $cardNo) {
+
+            // cards减完就对了
+            if (in_array($cardNo, $playersCards)) {
+                unset($cards[$k]);
+            }
+        }
+
+
+
+
+dd($cards);
         die;
         $previousCards = [3,4,5,6,7];
         $currentCards = [5,5,5,5];

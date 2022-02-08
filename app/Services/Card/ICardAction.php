@@ -17,18 +17,14 @@ interface ICardAction
      */
     public function initGame(int $packNum, int $playerNum, int $baseScore): void;
 
+
+
     /**
      * 加入游戏
      * @param int $playerNo 玩家编号
      * @param string $name 玩家姓名
      */
     public function joinGame(int $playerNo, string $name): void;
-
-    /**
-     * 设置地主
-     * @param int $lordPlayerNo
-     */
-    public function setLord(int $lordPlayerNo): void;
 
     /**
      * 出牌

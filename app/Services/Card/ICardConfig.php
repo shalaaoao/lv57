@@ -45,6 +45,22 @@ interface ICardConfig
     public function initPlayerCards(int $playerNo, array $cards): self;
 
     /**
+     * 增加玩家的牌
+     * @param int $playerNo
+     * @param array $cards
+     * @return $this
+     */
+    public function addPlayerCards(int $playerNo, array $cards): self;
+
+    /**
+     * 出牌
+     * @param int $playerNo
+     * @param array $cards
+     * @return $this
+     */
+    public function outPlayerCards(int $playerNo, array $cards): self;
+
+    /**
      * 选择玩法
      * @param int $gameType
      */
