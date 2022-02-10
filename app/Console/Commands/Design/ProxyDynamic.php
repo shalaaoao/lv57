@@ -4,21 +4,21 @@ namespace App\Console\Commands\Design;
 
 use Illuminate\Console\Command;
 
-class Agent extends Command
+class ProxyDynamic extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'design:agent';
+    protected $signature = 'design:proxy-dynamic';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '设计模式-代理模式';
+    protected $description = '设计模式-代理模式-动态代理';
 
     /**
      * Create a new command instance.
