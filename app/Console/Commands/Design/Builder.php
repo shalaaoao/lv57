@@ -38,27 +38,33 @@ class Builder extends Command
     public function handle()
     {
         $obj = new Director();
-        echo $obj->builder(new BikeBuilder()).PHP_EOL;
-        echo $obj->builder(new CarBuilder()).PHP_EOL;
+        echo $obj->builder(new BikeBuilder()) . PHP_EOL;
+        echo $obj->builder(new CarBuilder()) . PHP_EOL;
     }
 }
 
-class Director {
+class Director
+{
 
-    public function builder(BuilderInterface $builder) {
+    public function builder(BuilderInterface $builder)
+    {
         $builder->a();
         $builder->b();
         return $builder->c();
     }
 }
 
-interface BuilderInterface {
+interface BuilderInterface
+{
     public function a();
+
     public function b();
+
     public function c();
 }
 
-class BikeBuilder implements BuilderInterface {
+class BikeBuilder implements BuilderInterface
+{
     public function a()
     {
         return 'bike-a';
@@ -75,7 +81,8 @@ class BikeBuilder implements BuilderInterface {
     }
 }
 
-class CarBuilder implements BuilderInterface {
+class CarBuilder implements BuilderInterface
+{
     public function a()
     {
         return 'car-a';
