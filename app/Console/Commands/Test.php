@@ -45,95 +45,10 @@ class Test extends Command
      */
     public function handle()
     {
-        $playersCards = [1,1,2,2,3,3,4,4];
-        $cards = [3,3,4,5];
+        $arr = [1,2,3,4,5];
 
-        foreach ($cards as $k => $cardNo) {
+        array_splice($arr, 1, 1);
 
-            // cards减完就对了
-            if (in_array($cardNo, $playersCards)) {
-                unset($cards[$k]);
-            }
-        }
-
-
-
-
-dd($cards);
-        die;
-        $previousCards = [3,4,5,6,7];
-        $currentCards = [5,5,5,5];
-        $res = (new BaseCardServices())->setPreviousCards($previousCards)->compareCard($currentCards);
-dd($res);
-        die;
-
-
-        $ver = function ($cards) {
-            $cardsValueCount = array_count_values($cards);
-            $cardsN          = max($cardsValueCount);
-
-            // N必须>=3
-            if ($cardsN < 3) {
-                return;
-            }
-
-            // L
-            $cardsL = collect($cardsValueCount)->filter(function ($item) use ($cardsN) {
-                return $item == $cardsN;
-            })->count();
-
-            // 判断M、N的数量是否都为L
-            $cardsMCount = collect($cardsValueCount)->filter(function ($item) use ($cardsN) {
-                return $item < $cardsN;
-            })->count();
-            $cardsMSum   = collect($cardsValueCount)->filter(function ($item) use ($cardsN) {
-                return $item < $cardsN;
-            })->sum();
-
-            if ($cardsL != $cardsMCount && $cardsL != $cardsMSum) {
-                return;
-            }
-
-            // 判断M是否连续
-            $cardsMList = collect($cardsValueCount)->filter(function ($item) use ($cardsN) {
-                return $item == $cardsN;
-            })->keys()->toArray();
-
-            foreach ($cardsMList as $k => $cardNo) {
-                // 前后数字不连贯 - 错
-                if (isset($cardsMList[$k + 1]) && $cardNo != $cardsMList[$k + 1] - 1) {
-                    return;
-                }
-            }
-
-            return true;
-        };
-
-//        $lists = [
-//            [3, 3, 3, 1],
-//            [3, 3, 3, 1, 1],
-//            [5, 5, 5, 6, 6, 6, 1, 1],
-//            [5, 5, 5, 6, 6, 6, 1, 2],
-//            [5, 5, 5, 6, 6, 6, 1, 1, 2, 2],
-//        ];
-
-        $lists = [
-//            [3, 1],
-//            [3,3,3,1,2],
-//            [3,3,3,5,5,5,1,2],
-            [3,3,3,4,4,4,1,1,2,5]
-        ];
-
-        foreach ($lists as $cards) {
-            $ver($cards) ?: dump(json_encode($cards));
-        }
-
-        dump('success');
-
-        die;
-        $cards = [3, 4, 5, 6, 8];
-
-        $a = new CardRulesVerifyServices($cards);
-        dump($a->checkCardType());
+        dd($arr);
     }
 }

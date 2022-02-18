@@ -38,7 +38,7 @@ class Decorate extends Command
     public function handle()
     {
         $template = new CouponMessageTemplate();
-        $message  = new Message();
+        $message  = new DMessage();
 
         // 老系统，用不着过滤，只有内部用户能看到
         $message->send($template);
@@ -102,7 +102,7 @@ class SensitiveFilterDecoratorMessage extends DecoratorMessageTemplate
 }
 
 // 客户端，发送接口，需要使用模板来进行短信发送
-class Message
+class DMessage
 {
     public string $msgType = 'old';
 
