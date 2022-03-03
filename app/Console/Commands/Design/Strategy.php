@@ -37,33 +37,57 @@ class Strategy extends Command
      */
     public function handle()
     {
+        $context = new SContext(new ConcreteStrategyA());
+        $context->ContextInterface();
 
+        $context = new SContext(new ConcreteStrategyB());
+        $context->ContextInterface();
+
+        $context = new SContext(new ConcreteStrategyC());
+        $context->ContextInterface();
     }
 }
 
-interface StrategyInterface {
-    public function st();
+interface IStrategy
+{
+    function AlgorithmInterface();
 }
 
-interface Strategy2Interface{
-    public function st2($a);
-}
-
-class StrategyA implements StrategyInterface, Strategy2Interface {
-    public function st()
+class ConcreteStrategyA implements IStrategy
+{
+    function AlgorithmInterface()
     {
-
-    }
-
-    public function st2($b)
-    {
-
+        echo "算法A", PHP_EOL;
     }
 }
 
-class StrategyB implements StrategyInterface {
-    public function st()
+class ConcreteStrategyB implements IStrategy
+{
+    function AlgorithmInterface()
     {
+        echo "算法B", PHP_EOL;
+    }
+}
 
+class ConcreteStrategyC implements IStrategy
+{
+    function AlgorithmInterface()
+    {
+        echo "算法C", PHP_EOL;
+    }
+}
+
+class SContext
+{
+    private $strategy;
+
+    function __construct(IStrategy $s)
+    {
+        $this->strategy = $s;
+    }
+
+    function ContextInterface()
+    {
+        $this->strategy->AlgorithmInterface();
     }
 }
