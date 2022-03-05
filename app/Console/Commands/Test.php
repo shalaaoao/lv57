@@ -45,16 +45,19 @@ class Test extends Command
      */
     public function handle()
     {
-        $playersCards = [1,1,2,2,3,3,4,4];
-        $cards = [3,3,4,5];
+//        $playersCards = [1,1,2,2,3,3,4,4];
+//        $cards = [3,3,4,5];
+//
+//        foreach ($cards as $k => $cardNo) {
+//
+//            // cards减完就对了
+//            if (in_array($cardNo, $playersCards)) {
+//                unset($cards[$k]);
+//            }
+//        }
 
-        foreach ($cards as $k => $cardNo) {
-
-            // cards减完就对了
-            if (in_array($cardNo, $playersCards)) {
-                unset($cards[$k]);
-            }
-        }
+        $cards = [1,2,3,4,5,6,7,8,9];
+       array_splice($cards, 1, 2);
 
 
 
