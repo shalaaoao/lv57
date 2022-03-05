@@ -4,21 +4,21 @@ namespace App\Console\Commands\Design;
 
 use Illuminate\Console\Command;
 
-class Factory extends Command
+class FactorySimple extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'design:factory';
+    protected $signature = 'design:factory-simple';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '设计模式-工厂模式';
+    protected $description = '设计模式-简单工厂';
 
     /**
      * Create a new command instance.
@@ -37,20 +37,19 @@ class Factory extends Command
      */
     public function handle()
     {
-        // 当前业务需要使用百度云
-        $factory = new BaiduYunFactory();
-        $message = $factory->getMessage();
-        echo $message->send('您有新的短消息，请查收'), PHP_EOL;
+
+        // 当前业务需要使用极光
+        echo $message = MessageFactory::createFactory('Ali')
+                                      ->send('您又新的短消息，请查收~'), PHP_EOL;
     }
 }
 
-
-interface IMessageFactory
+interface FactorySimpleMessage
 {
     public function send(string $msg);
 }
 
-class IAliYunMessage implements IMessageFactory
+class AliYunMessage implements FactorySimpleMessage
 {
     public function send(string $msg)
     {
@@ -60,7 +59,7 @@ class IAliYunMessage implements IMessageFactory
     }
 }
 
-class IBaiduYunMessage implements IMessageFactory
+class BaiduYunMessage implements FactorySimpleMessage
 {
     public function send(string $msg)
     {
@@ -70,7 +69,7 @@ class IBaiduYunMessage implements IMessageFactory
     }
 }
 
-class IJiguangMessage implements IMessageFactory
+class JiguangMessage implements FactorySimpleMessage
 {
     public function send(string $msg)
     {
@@ -80,36 +79,19 @@ class IJiguangMessage implements IMessageFactory
     }
 }
 
-abstract class AMessageFactory
+class MessageFactory
 {
-    abstract protected function factoryMethod(): IMessageFactory;
-
-    public function getMessage(): IMessageFactory
+    public static function createFactory($type)
     {
-        return $this->factoryMethod();
-    }
-}
-
-class AliYunFactory extends AMessageFactory
-{
-    protected function factoryMethod(): IMessageFactory
-    {
-        return new IAliYunMessage();
-    }
-}
-
-class BaiduYunFactory extends AMessageFactory
-{
-    protected function factoryMethod(): IMessageFactory
-    {
-        return new IBaiduYunMessage();
-    }
-}
-
-class JiguangFactory extends AMessageFactory
-{
-    protected function factoryMethod(): IMessageFactory
-    {
-        return new IJiguangMessage();
+        switch ($type) {
+            case 'Ali':
+                return new AliYunMessage();
+            case 'BD':
+                return new BaiduYunMessage();
+            case 'JG':
+                return new JiguangMessage();
+            default:
+                return null;
+        }
     }
 }
