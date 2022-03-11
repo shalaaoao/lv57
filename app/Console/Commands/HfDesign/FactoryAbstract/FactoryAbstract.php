@@ -37,8 +37,7 @@ class FactoryAbstract extends Command
      */
     public function handle()
     {
-        $a = (new NYPizzaStore())->createPizza('cheese');
-        dump($a->prepare());
+        $a = (new NYPizzaStore())->orderPizza('cheese');
     }
 }
 
@@ -92,31 +91,32 @@ class NYPizzaIngredientFactory implements PizzaIngredientFactory
     public function createDough(): string
     {
         // 纽约用厚面皮
+        return (new ThickCrustDough())->make();
     }
 
     public function createSauce(): string
     {
-        // TODO: Implement createSauce() method.
+        return '';
     }
 
     public function createCheese(): string
     {
-        // TODO: Implement createCheese() method.
+        return '';
     }
 
     public function createVeggies(): string
     {
-        // TODO: Implement createVeggies() method.
+        return '';
     }
 
     public function createPepperoni(): string
     {
-        // TODO: Implement createPepperoni() method.
+        return '';
     }
 
     public function createClam(): string
     {
-        // TODO: Implement createClam() method.
+        return '';
     }
 }
 
@@ -133,27 +133,27 @@ class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory
 
     public function createSauce(): string
     {
-        // TODO: Implement createSauce() method.
+        return '';
     }
 
     public function createCheese(): string
     {
-        // TODO: Implement createCheese() method.
+        return '';
     }
 
     public function createVeggies(): string
     {
-        // TODO: Implement createVeggies() method.
+        return '';
     }
 
     public function createPepperoni(): string
     {
-        // TODO: Implement createPepperoni() method.
+        return '';
     }
 
     public function createClam(): string
     {
-        // TODO: Implement createClam() method.
+        return '';
     }
 }
 
@@ -320,6 +320,7 @@ class CheesePizza extends Pizza
     public function prepare(): void
     {
         dump("Preparing ".$this->getName().'...');
+
         $this->setDough($this->pizzaIngredientFactory->createDough());
         $this->setSauce($this->pizzaIngredientFactory->createSauce());
         $this->setCheese($this->pizzaIngredientFactory->createCheese());

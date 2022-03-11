@@ -42,7 +42,7 @@ class Decorate extends Command
         dump($espresso->cost());
 
         $espresso = (new Milk($espresso));
-        $espresso = (new Sugur($espresso));
+        $espresso = (new Sugar($espresso));
         dump($espresso->getDescription());
         dump($espresso->cost());
     }
@@ -53,7 +53,11 @@ class Decorate extends Command
  */
 abstract class Beverage
 {
+    protected Beverage $beverage;
+
     protected string $description = '';
+
+    abstract protected function cost();
 
     protected function setDescription(string $description): self
     {
@@ -66,10 +70,6 @@ abstract class Beverage
     {
         return $this->description;
     }
-
-    abstract protected function cost();
-
-    protected Beverage $beverage;
 }
 
 /**
@@ -79,7 +79,7 @@ class Espresso extends Beverage
 {
     public function __construct()
     {
-        $this->setDescription($this->getDescription().', Espresso');
+        $this->setDescription($this->getDescription() . ', Espresso');
     }
 
     public function cost()
@@ -95,7 +95,7 @@ class Latte extends Beverage
 {
     public function __construct()
     {
-        $this->setDescription($this->getDescription().', Latte');
+        $this->setDescription($this->getDescription() . ', Latte');
     }
 
     public function cost()
@@ -136,7 +136,7 @@ class Milk extends Beverage implements CondimentsDecorate
 /**
  * 调料 - 白糖
  */
-class Sugur extends Beverage implements CondimentsDecorate
+class Sugar extends Beverage implements CondimentsDecorate
 {
     public function __construct(Beverage $beverage)
     {
@@ -145,7 +145,7 @@ class Sugur extends Beverage implements CondimentsDecorate
 
     public function getDescription(): string
     {
-        return $this->beverage->getDescription() . ',Sugur';
+        return $this->beverage->getDescription() . ',Sugar';
     }
 
     public function cost()
