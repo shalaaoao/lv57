@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Enum\CardEnum;
+use App\Http\Model\StarLog;
 use App\Services\Card\BaseCardServices;
 use App\Services\Card\CardRulesVerifyServices;
 use Illuminate\Console\Command;
@@ -45,6 +46,7 @@ class Test extends Command
      */
     public function handle()
     {
-
+        $a = StarLog::query()->get()->toArray();
+        dd($a);
     }
 }
