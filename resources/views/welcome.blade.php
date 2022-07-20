@@ -95,5 +95,7 @@
                 </div>
             </div>
         </div>
+
+        <a href="https://beian.miit.gov.cn">沪ICP备15057863号-2</a>
     </body>
 </html>
